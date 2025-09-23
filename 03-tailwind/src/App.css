@@ -1,0 +1,10 @@
+/* agar chahe to yaha css na bhi kre import to chalga kyoki humne html file 
+m stylsheet link kr li h aur sab kuch html m hi inject hota h to classes phir bhi
+work kregi
+
+mtlb  index.css file global css file bn jaati h jab use hum tailwindcss ko import krke 
+html file m link kr lete h 
+aur agar hume sirf components m css chahiye to hum component by's bhi kr skte h
+
+*/
+
