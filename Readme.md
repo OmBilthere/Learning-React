@@ -53,3 +53,6 @@ command - "npm install"
 c. "npm run dev" krne se project localhost m show hone lgega 
 
 Note- phli process m js file aati h jabki vite m jsx file aati h dono library h isiliye esa chal rha h nhi to crash ho jata...
+
+
+
