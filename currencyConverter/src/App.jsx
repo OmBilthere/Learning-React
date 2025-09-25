@@ -2,23 +2,31 @@ import { useState } from 'react'
 import './App.css'
 
 import {InputBox} from './components'
-import UseCurrencyInfo from './hooks/useCurrencyinfo'
+import UseCurrencyInfo from './hooks/useCurrencyInfo'
 function App() {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState()
   const [from , setFrom] = useState("usd")
   const [to , setTo] = useState("inr")
-  const [convertedAmount , setConvertedAmount] = useState(0)
+  const [convertedAmount , setConvertedAmount] = useState()
  
   const currencyInfo = UseCurrencyInfo(from)
+
   
-  const option = Object.keys(currencyInfo)
+  const options = Object.keys(currencyInfo)
 
   const swap = () =>{
+    let tempFrom = from 
+    let tempAmount = amount 
     setFrom(to)
-    setTo(from)
-    setConvertedAmount(amount)
-    setAmount(convertedAmount)
+    setTo(tempFrom)
+    setConvertedAmount(convertedAmount)
+    setAmount(tempAmount)
   }
+ const convert = () =>{
+
+     setConvertedAmount(amount * currencyInfo[to])
+
+ }
 
     return (
         <div
@@ -40,9 +48,9 @@ function App() {
                                 label="From"
                                 amount = {amount}
                                 currencyOptions = {options}   
-                                onCurrencychange = {currency => setAmount(amount)}  
-                                selectCurrency = {from}
+                                onCurrencychange = {(currency) => setFrom(currency)}  
                                 onAmountChange={amount => setAmount(amount)}
+                                selectCurrency = {from}
                                 />
                         </div>
                         <div className="relative w-full h-0.5">
@@ -61,7 +69,7 @@ function App() {
                                 currencyOptions = {options}   
                                 onCurrencychange = {(currency)=>setTo(currency)}
                                 amountDisable  
-                                selectCurrency = {from}
+                                selectCurrency = {to}
                                 
                             />
                         </div>
@@ -72,6 +80,7 @@ function App() {
                 </div>
             </div>
         </div>
-    )}
+    )
+}
 
 export default App
