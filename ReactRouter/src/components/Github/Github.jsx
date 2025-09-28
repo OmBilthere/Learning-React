@@ -13,6 +13,7 @@ const Github = () => {
 const data = useLoaderData()
 
   return (
+    
     <div className='p-5 flex flex-col justify-center items-center gap-5 '>
     <div className=' w-full text-center bg-gray-700 text-white p-5'>
         Followers: {data.followers}
