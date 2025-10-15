@@ -4,9 +4,13 @@ import './App.css'
 import {InputBox} from './components'
 import UseCurrencyInfo from './hooks/useCurrencyInfo'
 function App() {
+
   const [amount, setAmount] = useState()
+
   const [from , setFrom] = useState("usd")
+
   const [to , setTo] = useState("inr")
+
   const [convertedAmount , setConvertedAmount] = useState()
  
   const currencyInfo = UseCurrencyInfo(from)
@@ -15,18 +19,19 @@ function App() {
   const options = Object.keys(currencyInfo)
 
   const swap = () =>{
-    let tempFrom = from 
-    let tempAmount = amount 
-    setFrom(to)
-    setTo(tempFrom)
-    setConvertedAmount(convertedAmount)
-    setAmount(tempAmount)
+
+    let newAmount = convertedAmount
+    let newFrom = to
+    setTo(from) 
+    setFrom(newFrom)
+    setConvertedAmount(amount)
+    setAmount(newAmount)
+
   }
- const convert = () =>{
 
-     setConvertedAmount(amount * currencyInfo[to])
+ const convert = () => setConvertedAmount(amount * currencyInfo[to])
 
- }
+ 
 
     return (
         <div
@@ -51,6 +56,7 @@ function App() {
                                 onCurrencychange = {(currency) => setFrom(currency)}  
                                 onAmountChange={amount => setAmount(amount)}
                                 selectCurrency = {from}
+                                
                                 />
                         </div>
                         <div className="relative w-full h-0.5">

@@ -7,6 +7,6 @@ const UserContextProvider = ({children})=>{
         <UserContext.Provider value = {{user , setuser}}>
         {children}
         </UserContext.Provider>
-    )
+   )
 }
 export default UserContextProvider

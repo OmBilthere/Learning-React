@@ -1,4 +1,4 @@
-import { useCallback, useState , useEffect , useRef} from 'react'
+ import { useCallback, useState , useEffect , useRef} from 'react'
 import './App.css'
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
   }
   return (
     <>
+
    <div className="w-100 p-5 flex flex-col justify-center items-center gap-5 mx-auto shadow-md rounded-lg px-4 my-8 text-white bg-white">
 
     <h1 className='w-full text-center p-5 bg-gray-800'>Password Generator</h1>

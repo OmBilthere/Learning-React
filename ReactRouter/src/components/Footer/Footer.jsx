@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 export default function Footer() {
     return (
         <footer className="bg-white border-y">
@@ -18,14 +18,14 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                    <NavLink to="/" className={({isActive}) =>`${isActive ? "text-orange-700" : "text-gray-700"}`}>
                                         Home
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
+                                    <NavLink to="/about" className={ ({isActive}) => (isActive) ? "text-red-500" : "text-gray-500" }>
                                         About
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -120,7 +120,7 @@ export default function Footer() {
                             </svg>
                             <span className="sr-only">Twitter page</span>
                         </Link>
-                        <Link to="#" className="text-gray-500">
+                        <Link to="#" className="text-gray-700">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"

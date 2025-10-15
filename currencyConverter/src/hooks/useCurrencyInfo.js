@@ -11,6 +11,8 @@ function UseCurrencyInfo (currency) {
       .then((res)=>setdata(res[currency]))
 
    } , [currency])
+
+   
      return data
 }
 

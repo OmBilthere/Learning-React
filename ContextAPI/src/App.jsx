@@ -7,8 +7,8 @@ function App() {
   
   return (
     <UserContextProvider>
-   <Login />
-   <Profile />
+    <Login />
+    <Profile />
     </UserContextProvider>
   )
 }

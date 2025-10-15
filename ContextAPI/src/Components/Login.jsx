@@ -1,6 +1,8 @@
 import React , {useState , useContext} from 'react'
 import UserContext from '../Context/UserContext'
 const Login = () => {
+
+  
      const [username , setusername]=useState('')
      const [password , setpassword]= useState('')
      
@@ -12,6 +14,7 @@ const Login = () => {
         e.preventDefault()
         setUser({username , password})
     }
+
   return (
     <div>
       <h2>Login</h2>
