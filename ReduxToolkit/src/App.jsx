@@ -1,16 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import AddTodo from './Components/AddTodo'
 import Todos from './Components/Todos'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
   <>
-   <h1>Learning about redux toolkit</h1>
+   <h1  className='text-white text-center text-2xl p-5 '>Todo using redux toolkit</h1>
    <AddTodo/>
    <Todos/>
   </>
