@@ -44,7 +44,7 @@ export class Service {
 
        try {
          return await this.databases.updateDocument (
-            conf.appwriteDatabaseId ,
+            conf.appwriteDataBaseId ,
             conf.appwriteCollectionId,
             slug,
             {
@@ -94,8 +94,8 @@ export class Service {
     async getPosts (queries = [Query.equal("status" , "active")]) {
       try {
         return await this.databases.listDocuments(
-            conf.appwriteCollectionId,
             conf.appwriteDataBaseId,
+            conf.appwriteCollectionId,
             queries,
             
         )
@@ -132,15 +132,17 @@ export class Service {
     }
 
     
-    getFilePreview(FileId) {
+     getFilePreview(FileId) {
         return this.bucket.getFilePreview(
             conf.appwriteBucketId,
-            fileId
+            FileId
         )
     }
 
 
 }
+
+
 const service = new Service()
 
 export default service
