@@ -44,10 +44,12 @@ function Login() {
                         className="font-medium text-primary transition-all duration-200 hover:underline"
                     >
                         Sign Up
+                        
                     </Link>
                 </p>
                 {error &&  <p className='text-red-600 mt-8
                 text-center'>{error}</p>}
+
                 <form onSubmit={handleSubmit(login)} className='mt-8'>
                     <div className='space-y-5'>
                     <Input 
@@ -58,7 +60,7 @@ function Login() {
                         required: true,
                         validate: {
                         
-                         matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                         matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                         "Email address must be a valid address",
                             
                         }
@@ -72,6 +74,7 @@ function Login() {
                         required:true,
                     })}
                     />
+
                     <Button
                     type="submit"
                     className="w-full" >
