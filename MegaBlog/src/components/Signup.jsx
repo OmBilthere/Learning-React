@@ -19,7 +19,7 @@ function Signup() {
      setError("")
 
      try {
-       
+            
        const userData = await authService.createAccount(data)
        if(userData) {
         const userData = await authService.getCurrentUser()
@@ -34,6 +34,7 @@ function Signup() {
      }
 
     }
+    
   return (
 
      <div className="flex items-center justify-center">

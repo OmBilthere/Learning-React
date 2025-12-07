@@ -21,6 +21,7 @@ export default function PostForm({ post }) {
     const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
+        
         if (post) {
 
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
@@ -75,6 +76,7 @@ export default function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
 
     return (
+        
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
                 <Input

@@ -21,6 +21,7 @@ export default function Post() {
                 else navigate("/");
             });
         } else navigate("/");
+        
     }, [slug, navigate]);
 
     const deletePost = () => {
