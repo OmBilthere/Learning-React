@@ -1,9 +1,7 @@
 const Logo = ({width = '100px'}) => {
   return (
-    <div>
-
-      Logo
-      
+    <div className="py-3">
+     MegaBlog 
     </div>
   )
 }
